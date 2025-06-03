@@ -1,387 +1,289 @@
-/* === Reset Básico y Configuración Global === */
+/* Archivo: src/assets/style.css */
+
+/* === VARIABLES CSS GLOBALES === */
+:root {
+  --primary-color: #4A90E2;         /* Azul principal (botones, acentos) */
+  --primary-color-dark: #3c7ddb;    /* Azul más oscuro (hover, títulos, acentos oscuros) */
+  --primary-color-deep-dark: #2a5a99;/* Azul aún más oscuro (fondos hero si se usa con texto claro) */
+  --primary-color-light: #e0f2fe;   /* Azul muy claro (fondos sutiles, hover de tarjetas) */
+  
+  --secondary-color: #5cb85c;       /* Verde para éxito o acentos secundarios */
+  --text-color: #343a40;            /* Gris oscuro principal para texto */
+  --text-color-light: #6c757d;      /* Gris más claro para texto secundario o descripciones */
+  --text-color-on-primary: #ffffff; /* Texto para usar sobre el color primario */
+  --text-color-on-dark-bg: #f8f9fa;  /* Texto claro para usar sobre fondos muy oscuros */
+
+  --background-color: #f4f6f9;      /* Fondo general de la página (gris muy claro, ligeramente azulado) */
+  --card-background-color: #ffffff; /* Fondo para las tarjetas */
+  --border-color: #dee2e6;          /* Color de borde estándar */
+  --input-border-color: #ced4da;     /* Color de borde para inputs */
+
+  --error-color: #dc3545;           /* Rojo para errores */
+  --success-color: var(--secondary-color);
+  --warning-color: #ffc107;         /* Amarillo para advertencias */
+  --info-color: #17a2b8;            /* Azul/Cian para información */
+
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem;  /* 8px */
+  --border-radius-lg: 0.75rem; /* 12px */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+  --container-padding-x: 15px;
+  --base-font-size-desktop: 16px;
+  --base-font-size-tablet: 15px;
+  --base-font-size-mobile: 14px;
+}
+
+/* === RESET BÁSICO Y CONFIGURACIÓN GLOBAL === */
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Asegura que padding y border no aumenten el tamaño total del elemento */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilos Generales del Body */
+html {
+  scroll-behavior: smooth;
+  font-size: var(--base-font-size-mobile); /* Mobile first font-size */
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: 'Poppins', sans-serif; /* Fuente principal. Asegúrate que Poppins esté vinculada en el HTML y se cargue. */
-    line-height: 1.7; /* Altura de línea para mejor legibilidad */
-    margin: 0; /* Elimina márgenes por defecto */
-    padding: 0; /* Elimina paddings por defecto */
-    background-color: #f8f9fa; /* Fondo gris muy claro para la página */
-    color: #495057; /* Color de texto principal (gris oscuro) */
-    font-size: 16px; /* Tamaño de fuente base */
+  font-family: var(--font-main);
+  line-height: 1.7;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Previene scroll horizontal no deseado a nivel de página */
 }
 
-/* === Contenedor Principal === */
+/* === TÍTULOS Y PÁRRAFOS BASE === */
+h1, h2, h3, h4, h5, h6 { margin-bottom: 0.8rem; font-weight: 600; line-height: 1.3; color: var(--text-color); }
+h1 { font-size: 2.1em; margin-bottom: 1rem; }
+h2 { font-size: 1.7em; margin-bottom: 0.9rem;}
+h3 { font-size: 1.3em; margin-bottom: 0.7rem;}
+h4 { font-size: 1.1em; margin-bottom: 0.6rem;}
+p { margin-bottom: 1rem; color: var(--text-color-light); }
+a { color: var(--primary-color); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--primary-color-dark); text-decoration: underline; }
+strong { font-weight: 600; color: var(--text-color); }
+code {
+  background-color: rgba(0,0,0,0.04); padding: 0.2em 0.45em; margin: 0 0.1em;
+  font-size: 0.875em; border-radius: var(--border-radius-sm); font-family: var(--font-code);
+  color: #d63384; /* Color rosado para código */
+  word-break: break-word; /* Para que el código largo no rompa el layout */
+  white-space: pre-wrap; /* Para que respete espacios y saltos si es un bloque */
+}
+
+/* === CONTENEDOR PRINCIPAL === */
 .container {
-    width: 90%; /* Usa un porcentaje del ancho de la ventana */
-    max-width: 1100px; /* Pero no más de 1100px para mantener la legibilidad en pantallas grandes */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 0 15px; /* Padding horizontal para que el contenido no toque los bordes en pantallas pequeñas */
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
 }
 
-/* === Estilos del Encabezado (Header) === */
-header {
-    background-color: #4A90E2; /* Azul primario */
-    color: #ffffff; /* Texto blanco */
-    padding: 1.5rem 0; /* Relleno vertical (rem es relativo al tamaño de fuente raíz) */
-    text-align: center; /* Centra el contenido del header */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil inferior */
+/* === ENCABEZADO (AppHeader.vue) === */
+header.app-header {
+  background-color: var(--primary-color); /* Azul principal */
+  color: var(--text-color-on-primary);
+  padding: 1rem var(--container-padding-x);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  /* border-bottom: 3px solid var(--primary-color-dark); Opcional */
 }
-header h1 {
-    margin: 0; /* Elimina margen por defecto del h1 */
-    font-weight: 600; /* Peso de la fuente semigruesa */
-    font-size: 2em; /* Tamaño de fuente relativo al tamaño base del body (16px * 2 = 32px) */
-}
-
-/* === Estilos de la Barra de Navegación (Nav) === */
-nav {
-    background-color: #3c7ddb; /* Un azul ligeramente más oscuro que el header */
-    padding: 0.5rem 0; /* Relleno vertical */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra muy sutil */
-}
-nav ul {
-    padding: 0; /* Elimina padding por defecto de la lista */
-    list-style: none; /* Quita los puntos de la lista */
-    text-align: center; /* Centra los elementos de la lista */
-    margin: 0; /* Elimina margen por defecto */
-}
-nav ul li {
-    display: inline-block; /* Coloca los elementos de la lista en línea, permitiendo padding/margin */
-    margin: 0 10px; /* Espacio horizontal entre elementos del menú */
-}
-nav ul li a {
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-    color: #ffffff; /* Color de texto blanco */
-    padding: 0.8rem 1rem; /* Relleno para un área de clic más grande */
-    display: block; /* Hace que el enlace ocupe todo el espacio del <li> (importante para el padding) */
-    font-weight: 400; /* Peso de fuente normal */
-    border-radius: 4px; /* Bordes redondeados sutiles */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para efectos hover/focus */
-}
-nav ul li a:hover, /* Cuando el mouse está encima */
-nav ul li a:focus { /* Cuando el enlace tiene foco (ej. navegación por teclado) */
-    background-color: #ffffff; /* Fondo blanco */
-    color: #4A90E2; /* Texto azul */
+header.app-header h1 {
+  margin: 0; font-weight: 600; font-size: 1.6em; color: var(--text-color-on-primary);
 }
 
-/* === Contenido Principal (Main) === */
-main.container {
-    padding-top: 30px; /* Espacio arriba de la primera tarjeta */
-    padding-bottom: 30px; /* Espacio abajo de la última tarjeta */
+/* === NAVEGACIÓN PRINCIPAL (AppNav.vue) === */
+nav.app-nav {
+  background-color: var(--primary-color-dark); /* Azul oscuro */
+  padding: 0.4rem 0;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+nav.app-nav .nav-container { padding: 0; } /* Si AppNav usa un div.container interno */
+nav.app-nav ul { list-style: none; text-align: center; display: flex; flex-direction: column; align-items: stretch; }
+nav.app-nav ul li { margin: 0; width: 100%; }
+nav.app-nav ul li a {
+  display: block; padding: 0.8rem 1rem; color: var(--text-color-on-primary);
+  text-decoration: none; text-align: center; font-weight: 500; font-size: 0.95em;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+nav.app-nav ul li:last-child a { border-bottom: none; }
+nav.app-nav ul li a:hover,
+nav.app-nav ul li a:focus { background-color: rgba(255,255,255,0.1); }
+nav.app-nav ul li a.router-link-exact-active { /* Estilo para enlace activo */
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
 }
 
-/* === Estilo de "Tarjeta" para las Secciones === */
+/* === LAYOUT DE App.vue === */
+#vue-app-container { display: flex; flex-direction: column; min-height: 100vh; }
+main.container.main-content-area { flex-grow: 1; padding-top: 30px; padding-bottom: 40px; }
+.qa-box-container.container { margin-top: 30px; margin-bottom: 40px; }
+
+/* === TARJETAS DE CONTENIDO (.card) === */
 .card {
-    background-color: #ffffff; /* Fondo blanco para las tarjetas de contenido */
-    margin-bottom: 30px; /* Espacio vertical entre tarjetas */
-    padding: 25px; /* Relleno interno */
-    border-radius: 8px; /* Bordes más redondeados */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra más pronunciada pero suave */
-    border-left: 5px solid #4A90E2; /* Borde izquierdo de acento azul */
+  background-color: var(--card-background-color);
+  padding: 20px 25px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
 }
-.card h2 {
-    color: #3c7ddb; /* Títulos de sección en azul */
-    border-bottom: 2px solid #e9ecef; /* Línea divisoria sutil bajo el título */
-    padding-bottom: 10px; /* Espacio entre el texto del título y la línea */
-    margin-top: 0; /* Elimina margen superior por defecto del h2 */
-    margin-bottom: 20px; /* Espacio después del título de sección */
-    font-weight: 600; /* Peso de fuente semigruesa */
-    font-size: 1.8em; /* Tamaño de fuente para títulos de sección */
-}
-.card h3 {
-    color: #333333; /* Color para subtítulos */
-    margin-top: 25px; /* Espacio superior */
-    margin-bottom: 10px; /* Espacio inferior */
-    font-weight: 600;
-    font-size: 1.4em;
-}
-.card h4 {
-    color: #555555; /* Color para sub-subtítulos */
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 1.1em;
-}
-.card p,
-.card li {
-    color: #495057; /* Color de texto para párrafos y elementos de lista */
-    font-size: 1em; /* Tamaño de fuente estándar */
-}
-.card ul,
-.card ol {
-    padding-left: 20px; /* Sangría para listas */
+.topic-view-container > .card:last-of-type, /* Evita doble margen */
+.topic-view-container > .exercise-section-wrapper:last-of-type { /* Si ExerciseSection es el último */
+    margin-bottom: 0;
 }
 
-/* === Estilos para las Tablas === */
-table {
-    width: 100%; /* La tabla ocupa todo el ancho disponible en su contenedor */
-    border-collapse: collapse; /* Une los bordes de las celdas */
-    margin-top: 20px; /* Margen superior */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil para la tabla */
+.card h2 { /* Título H2 dentro de un ContentCard */
+  color: var(--primary-color-dark); border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px; margin-top: 0; margin-bottom: 25px;
+  font-weight: 600; font-size: 1.6em;
 }
-th, td {
-    border: 1px solid #dee2e6; /* Borde de celda más claro */
-    padding: 12px; /* Relleno dentro de las celdas */
-    text-align: left; /* Alineación del texto a la izquierda */
-    font-size: 0.95em; /* Tamaño de fuente ligeramente reducido para tablas */
+.card h3 { color: var(--text-color); margin-top: 25px; margin-bottom: 12px; font-weight: 600; font-size: 1.3em; }
+.card h4 { color: var(--text-color-light); margin-top: 18px; margin-bottom: 10px; font-weight: 600; font-size: 1.05em; }
+.card p, .card li { line-height: 1.7; margin-bottom: 0.8rem; font-size: 0.95rem; }
+.card strong { color: var(--text-color); }
+
+
+/* === TABLAS (VerbTable) === */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Permite scroll horizontal SI la tabla es más ancha */
+  margin: 20px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--card-background-color); /* Para que el área de scroll tenga fondo */
 }
-th { /* Encabezados de la tabla */
-    background-color: #e9ecef; /* Fondo de encabezado de tabla claro */
-    color: #495057; /* Texto oscuro */
-    font-weight: 600; /* Texto en negrita */
+table.verb-table-component, /* Para la tabla específica de VerbTable */
+.table-responsive-wrapper table { /* Estilo general para tablas dentro del wrapper */
+  width: 100%;
+  min-width: 500px; /* Ajusta este valor según el contenido mínimo legible de tus tablas */
+  border-collapse: collapse;
+  font-size: 0.9em;
 }
-tr:nth-child(even) { /* Estilo para filas pares (mejora legibilidad) */
-    background-color: #f8f9fa; /* Color de fondo alterno muy sutil */
+table.verb-table-component th,
+.table-responsive-wrapper table th,
+table.verb-table-component td,
+.table-responsive-wrapper table td {
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
 }
-tr:hover { /* Resaltar fila al pasar el mouse */
-    background-color: #e9ecef;
+table.verb-table-component th,
+.table-responsive-wrapper table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--text-color);
+  position: sticky; /* Opcional: encabezados fijos */
+  top: 0;
+  z-index: 1;
+  white-space: nowrap;
 }
 
-/* === Estilos para Bloques de Ejemplo y Código === */
-.example {
-    background-color: #e6f3ff; /* Azul muy claro */
-    padding: 15px;
-    border-radius: 6px;
-    margin: 15px 0; /* Margen vertical */
-    border-left: 4px solid #7bb9f7; /* Borde izquierdo azul más claro */
-}
-.example p {
-    margin: 5px 0; /* Margen interno para los párrafos del ejemplo */
-    color: #2c5b8a; /* Texto un poco más oscuro para contraste */
-}
-.example code, /* Bloques de código dentro de .example */
-p code { /* Código inline dentro de párrafos (ej. <p><code>texto</code></p>) */
-    background-color: #d1e7fd; /* Fondo para el código */
-    padding: 0.2em 0.4em; /* Relleno pequeño alrededor del código */
-    margin: 0; /* Sin margen extra */
-    font-size: 0.9em; /* Tamaño ligeramente reducido */
-    border-radius: 3px; /* Bordes redondeados */
-    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para código */
-}
-
-/* === Estilos para Consejos o Notas Importantes === */
-.tip {
-    background-color: #fff8e1; /* Amarillo muy claro */
-    border-left: 4px solid #ffd54f; /* Borde izquierdo amarillo */
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 6px;
-}
-.tip p {
-    color: #795548; /* Texto marrón para el tip */
-    margin: 0; /* Elimina margen del párrafo dentro del tip */
-}
-.mini-tip { /* Para notas más pequeñas dentro de otros elementos */
-    padding: 8px;
-    margin-top: 8px;
-    font-size: 0.9em; /* Más pequeño */
-}
-
-/* === Estilos para la Sección de Ejercicios y Práctica === */
-#practica .exercise-item {
-    margin-bottom: 20px; /* Espacio entre ítems de ejercicio */
-    padding: 15px; /* Relleno interno */
-    background-color: #f8f9fa; /* Fondo ligeramente gris */
-    border-radius: 6px; /* Bordes redondeados */
-    border: 1px solid #e0e0e0; /* Borde sutil */
-}
-#practica input[type="text"] {
-    padding: 10px; /* Relleno interno del input */
-    border: 1px solid #ced4da; /* Borde del input */
-    border-radius: 4px; /* Bordes redondeados del input */
-    margin-right: 10px; /* Espacio a la derecha del input */
-    font-family: 'Poppins', sans-serif; /* Misma fuente que el cuerpo */
-    font-size: 0.95em; /* Tamaño de fuente */
-    /* Ancho del input: calc() permite restar un valor fijo del porcentaje.
-       Ajusta el '150px' o el ancho en media query si el layout no se ve bien. */
-    width: calc(100% - 150px); /* Ocupa el 100% del ancho menos 150px (para feedback o botón) */
-    max-width: 250px; /* No más de 250px de ancho */
-}
-#practica input[type="text"]:focus { /* Cuando el input tiene foco */
-    border-color: #4A90E2; /* Color del borde azul */
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25); /* Sombra de foco azulada */
-    outline: none; /* Quita el outline por defecto del navegador (ya tenemos box-shadow) */
-}
-#practica .exercise-item span { /* Estilo para el texto de feedback (ej. ¡Correcto!) */
-    font-style: italic; /* Cursiva */
-    font-size: 0.9em; /* Ligeramente más pequeño */
-}
-.feedback-correct {
-    color: #28a745; /* Verde para feedback correcto */
-}
-.feedback-incorrect {
-    color: #dc3545; /* Rojo para feedback incorrecto */
-}
-
-/* === Botón General === */
+/* === BOTONES (.btn) === */
 .btn {
-    background-color: #4A90E2; /* Azul primario */
-    color: white; /* Texto blanco */
-    padding: 12px 20px; /* Relleno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de mano */
-    font-family: 'Poppins', sans-serif; /* Misma fuente */
-    font-weight: 500; /* Peso de fuente medio */
-    font-size: 1em; /* Tamaño de fuente */
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Transiciones suaves */
-    display: inline-block; /* Para que el botón tome padding/margin correctamente */
-    text-align: center; /* Centra el texto si el botón es más ancho */
+  display: inline-block; font-weight: 500; color: #ffffff; text-align: center;
+  vertical-align: middle; cursor: pointer; user-select: none;
+  background-color: var(--primary-color); border: 1px solid var(--primary-color);
+  padding: 0.6rem 1.2rem; font-size: 0.95em; line-height: 1.5;
+  border-radius: var(--border-radius-md); text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
-.btn:hover {
-    background-color: #3c7ddb; /* Azul más oscuro al pasar el mouse */
-    transform: translateY(-1px); /* Efecto sutil de elevación */
+.btn:hover, .btn:focus {
+  background-color: var(--primary-color-dark); border-color: var(--primary-color-dark);
+  color: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-sm); outline: none;
 }
-.btn:active { /* Cuando el botón está presionado */
-    transform: translateY(0px); /* Quita la elevación */
+.btn-small { padding: 0.35rem 0.75rem; font-size: 0.8em; }
+.btn.btn-outline { background-color: transparent; border-color: var(--primary-color); color: var(--primary-color); }
+.btn.btn-outline:hover, .btn.btn-outline:focus { background-color: var(--primary-color); color: white; }
+
+
+/* === ELEMENTOS MISCELÁNEOS (Ejemplos, Tips) === */
+.example, .tip { padding: 18px 22px; border-radius: var(--border-radius-sm); margin: 25px 0; border: 1px solid; }
+.example { background-color: var(--primary-color-light); border-color: #bce0fd; color: #00376e; }
+.example p:last-child, .tip p:last-child { margin-bottom: 0; }
+.example code, .tip code { background-color: rgba(0,0,0,0.05); }
+.tip { background-color: #fff3cd; border-left: 4px solid var(--warning-color); color: #664d03;}
+.tip strong { color: #523e02; }
+
+
+/* === SECCIONES DE EJERCICIO === */
+.exercise-section-description { font-size: 0.95em; color: var(--text-color-light); margin-bottom: 25px; font-style: italic; }
+.check-exercises-btn { margin-top: 30px; display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; }
+.exercise-item-card { background-color: #fdfdfd; border-radius: var(--border-radius-sm); padding: 15px; margin-bottom: 15px; box-shadow: var(--shadow-sm); border: 1px solid #f0f0f0; }
+/* ... (El resto de los estilos para ExerciseItem como los tenías) ... */
+.feedback-correct { color: var(--success-color); }
+.feedback-incorrect { color: var(--error-color); }
+.feedback-neutral { color: var(--text-color-light); }
+
+
+/* === QABox === */
+#qa-box {
+  display: flex; flex-direction: column; height: 100%; max-height: 600px; /* Ajusta según sea necesario */
+  border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);
+  overflow: hidden; background-color: #f8f9fa;
+}
+/* ... (Estilos para #qa-area, #chat-box, .message, etc., como los tenías) ... */
+#qa-area { border: 1px solid var(--border-color); background-color: #fdfdfd;}
+.user-message { background-color: var(--primary-color); color: var(--text-color-on-primary); }
+.bot-message { background-color: #e9ecef; color: var(--text-color); }
+#input-area { background-color: #f8f9fa; border-top: 1px solid var(--border-color); }
+#user-question { border: 1px solid var(--input-border-color); }
+
+
+/* === VIDEO CONTAINER === */
+.video-container {
+  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+  max-width: 100%; background: #e0e0e0; margin: 25px auto;
+  border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);
+}
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+
+/* === PIE DE PÁGINA (FOOTER) === */
+footer.app-footer {
+  text-align: center; padding: 1.8rem 0; background-color: #2c3e50;
+  color: #bdc3c7; margin-top: 50px; font-size: 0.85em;
+  border-top: 1px solid #343a40;
+}
+footer.app-footer p { margin: 0; }
+
+
+/* === MEDIA QUERIES PARA RESPONSIVIDAD === */
+/* Tablets (a partir de 768px) */
+@media (min-width: 768px) {
+  html { font-size: var(--base-font-size-tablet, 15px); }
+  nav.app-nav ul {
+    flex-direction: row; /* Navegación horizontal */
+    justify-content: center;
+  }
+  nav.app-nav ul li { width: auto; border-bottom: none; }
+  nav.app-nav ul li a { border-bottom: none; }
+  header.app-header h1 { font-size: 1.7em; }
+  .card h2 { font-size: 1.6em; }
 }
 
-/* === Sección de Preguntas y Respuestas (Q&A) === */
-#qa-area {
-    display: flex; /* Activa Flexbox */
-    flex-direction: column; /* Elementos hijos se apilan verticalmente */
-    height: 450px; /* Altura fija para el área de chat. Ajusta si es necesario. */
-    border: 1px solid #e0e0e0; /* Borde alrededor del chat */
-    border-radius: 8px; /* Bordes redondeados */
-    overflow: hidden; /* Asegura que el contenido no se desborde de los bordes redondeados */
-    background-color: #fdfdfd; /* Fondo ligeramente diferente para el área de chat */
-}
-
-#chat-box {
-    flex-grow: 1; /* Permite que esta caja crezca para ocupar el espacio vertical disponible en #qa-area */
-    padding: 20px; /* Relleno interno */
-    overflow-y: auto; /* Scroll vertical si el contenido es mayor que la altura */
-    display: flex; /* Flexbox para alinear los mensajes */
-    flex-direction: column; /* Mensajes se apilan verticalmente */
-}
-
-.message { /* Estilo base para todos los mensajes (usuario y bot) */
-    padding: 10px 15px; /* Relleno */
-    border-radius: 15px; /* Bordes muy redondeados para estilo burbuja */
-    margin-bottom: 10px; /* Espacio entre mensajes */
-    max-width: 75%; /* Los mensajes no ocupan todo el ancho del chat-box */
-    line-height: 1.5; /* Altura de línea */
-    font-size: 0.95em; /* Tamaño de fuente */
-}
-
-.user-message { /* Mensajes del usuario */
-    background-color: #4A90E2; /* Fondo azul */
-    color: white; /* Texto blanco */
-    align-self: flex-end; /* Alinea el mensaje a la derecha */
-    border-bottom-right-radius: 5px; /* Ajuste para forma de burbuja (esquina inferior derecha menos redonda) */
-}
-
-.bot-message { /* Mensajes del bot */
-    background-color: #e9ecef; /* Fondo gris claro */
-    color: #333333; /* Texto oscuro */
-    align-self: flex-start; /* Alinea el mensaje a la izquierda */
-    border-bottom-left-radius: 5px; /* Ajuste para forma de burbuja (esquina inferior izquierda menos redonda) */
-}
-.bot-message.error-message { /* Estilo específico si el bot da un mensaje de error */
-    background-color: #ffebee; /* Fondo rojo muy claro */
-    color: #c62828; /* Texto rojo oscuro */
-    border-left: 4px solid #e57373; /* Borde izquierdo rojo para destacar */
-}
-
-#input-area { /* Área para escribir la pregunta */
-    display: flex; /* Flexbox para alinear input y botón horizontalmente */
-    padding: 15px; /* Relleno */
-    border-top: 1px solid #e0e0e0; /* Línea superior divisoria */
-    background-color: #f8f9fa; /* Fondo ligeramente gris */
-}
-
-#user-question { /* Campo de texto para la pregunta */
-    flex-grow: 1; /* Permite que el input crezca para ocupar el espacio disponible */
-    padding: 12px; /* Relleno interno */
-    border: 1px solid #ced4da; /* Borde */
-    border-radius: 20px; /* Input redondeado */
-    margin-right: 10px; /* Espacio entre el input y el botón */
-    font-family: 'Poppins', sans-serif; /* Misma fuente */
-    font-size: 1em; /* Tamaño de fuente */
-}
-#user-question:focus { /* Cuando el input tiene foco */
-    border-color: #4A90E2; /* Borde azul */
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25); /* Sombra de foco azulada */
-    outline: none; /* Quita outline por defecto */
-}
-
-#ask-btn { /* Botón de enviar pregunta */
-    white-space: nowrap; /* Evita que el texto del botón se rompa en dos líneas */
-    padding: 12px 20px; /* Relleno */
-    border-radius: 20px; /* Botón redondeado, igual que el input */
-}
-
-/* === Estilos del Pie de Página (Footer) === */
-footer {
-    text-align: center; /* Centra el texto */
-    padding: 2rem 0; /* Relleno vertical */
-    background-color: #343a40; /* Fondo gris oscuro */
-    color: #adb5bd; /* Texto gris claro */
-    margin-top: 30px; /* Espacio superior */
-    font-size: 0.9em; /* Texto ligeramente más pequeño */
-}
-footer p {
-    margin: 0; /* Elimina margen por defecto del párrafo */
-}
-
-/* === Media Queries para Responsividad (Ajustes para pantallas más pequeñas) === */
-@media (max-width: 768px) { /* Estilos que aplican si el ancho de la pantalla es 768px o menos */
-    .container {
-        width: 95%; /* Contenedor un poco más ancho en móviles */
-    }
-    header h1 {
-        font-size: 1.6em; /* Título principal más pequeño */
-    }
-    .card h2 {
-        font-size: 1.5em; /* Títulos de sección más pequeños */
-    }
-    nav ul li {
-        display: block; /* Elementos del menú en bloque (uno debajo del otro) */
-        margin: 5px 0; /* Margen vertical entre ellos */
-    }
-    nav ul li a {
-        padding: 0.6rem 0.8rem; /* Padding ligeramente reducido para enlaces de nav */
-    }
-    #practica input[type="text"] {
-        width: calc(100% - 24px); /* Input de ejercicio ocupa casi todo el ancho menos un poco de padding */
-        margin-bottom: 10px; /* Espacio si hay un botón debajo en layout móvil */
-    }
-    #qa-area {
-        height: 400px; /* Área de chat un poco menos alta en móviles */
-    }
-    .message {
-        max-width: 90%; /* Mensajes pueden ser un poco más anchos en móviles */
-    }
-    #input-area {
-        flex-direction: column; /* Input y botón se apilan verticalmente */
-    }
-    #user-question {
-        margin-right: 0; /* Sin margen derecho ya que el botón va debajo */
-        margin-bottom: 10px; /* Espacio entre input y botón */
-    }
-    #ask-btn {
-        width: 100%; /* Botón ocupa todo el ancho */
-    }
-}
-/* Archivo: src/assets/style.css */
-:root {
-  --primary-color: #4A90E2;
-  --primary-color-dark: #3c7ddb;
-  --primary-color-light: #7bb9f7;
-  --text-color: #495057;
-  --light-gray-bg: #f8f9fa;
-  /* ... más variables si las necesitas ... */
-}
-
-/* Resto de tus estilos globales ... */
-body {
-  font-family: 'Poppins', sans-serif;
-  /* ... */
-  color: var(--text-color); /* Ejemplo de uso */
-  background-color: var(--light-gray-bg); /* Ejemplo de uso */
+/* Desktops (a partir de 992px) */
+@media (min-width: 992px) {
+  html { font-size: var(--base-font-size-desktop, 16px); }
+  header.app-header h1 { font-size: 1.8em; }
+  .card h2 { font-size: 1.75em; }
 }

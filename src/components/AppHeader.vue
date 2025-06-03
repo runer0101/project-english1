@@ -2,7 +2,6 @@
 <template>
   <header>
     <div class="container">
-      <h1>Pasado Simple en Inglés: Guía Didáctica Interactiva</h1>
     </div>
   </header>
 </template>

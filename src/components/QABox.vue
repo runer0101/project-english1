@@ -1,6 +1,5 @@
-// Archivo: src/components/QABox.vue
 <template>
-  <ContentCard id="preguntas-respuestas" title="Pregúntame sobre el Pasado Simple">
+  <ContentCard id="preguntas-respuestas" title="Pregúntame sobre tus dudas de cualquiera de los Temas" class="qa-box">
     <div id="qa-area">
       <div id="chat-box" ref="chatBoxRef">
         <div v-for="(msg, index) in messages" :key="index" :class="['message', msg.sender + '-message']">
@@ -28,7 +27,7 @@ import { qaPairs, defaultFallbackAnswer } from '../data/qaData.js'; // Importamo
 
 const userQuestion = ref(''); // Variable reactiva para el input del usuario
 const messages = ref([ // Array reactivo para los mensajes del chat
-  { sender: 'bot', text: 'Hola 👋 ¡Pregúntame lo que quieras saber sobre el pasado simple, verbos regulares o irregulares!' }
+  { sender: 'bot', text: 'Hola 👋 ¡Pregúntame lo que quieras saber!' }
 ]);
 const chatBoxRef = ref(null); // Referencia al div del chat-box
 
