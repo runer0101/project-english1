@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'url'
 
-export default defineConfig({
+export default {
   base: '/project-english2/', 
   plugins: [vue()],
   resolve: {
@@ -10,4 +10,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
-})
+}
