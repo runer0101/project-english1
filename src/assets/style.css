@@ -2,7 +2,7 @@
 
 /* === VARIABLES CSS GLOBALES === */
 :root {
-  --primary-color: #4A90E2;         /* Azul principal (botones, acentos) */
+  --primary-color: #4b91e2;         /* Azul principal (botones, acentos) */
   --primary-color-dark: #3c7ddb;    /* Azul más oscuro (hover, títulos, acentos oscuros) */
   --primary-color-deep-dark: #2a5a99;/* Azul aún más oscuro (fondos hero si se usa con texto claro) */
   --primary-color-light: #e0f2fe;   /* Azul muy claro (fondos sutiles, hover de tarjetas) */

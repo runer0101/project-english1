@@ -31,10 +31,9 @@ export const simplePastExercises = [
   },
   {
     id: 'sp_ex5',
-    type: 'multiple_choice',
+    type: 'form_sentence_question',
     text: "5. I ______ to the new song on the radio yesterday.",
-    options: ["listened", "listen", "did listen"], // "did listen" para énfasis o si se busca la forma base.
-                                                 // "listened" es la más común para afirmativo.
+    placeholder: "Verbo en Pasado Simple", 
     correctAnswer: "listened"
   }
 ];
@@ -43,15 +42,18 @@ export const simplePastExercises = [
 // (Aquí no hay negaciones comunes con "did not / didn't", así que es más directo)
 export const comparativeExercises = [
   {
+    text: "COMPARATIVES"
+  },
+  {
     id: 'comp_ex1',
-    type: 'form_comparative',
+    type: 'fill_in_blank',
     text: "1. Escribe la forma comparativa de 'tall':",
     placeholder: "Comparativo",
     correctAnswer: "taller"
   },
   {
     id: 'comp_ex2',
-    type: 'form_comparative',
+    type: 'fill_in_blank',
     text: "2. Escribe la forma comparativa de 'beautiful':",
     placeholder: "Comparativo",
     correctAnswer: "more beautiful"
@@ -72,24 +74,27 @@ export const comparativeExercises = [
   },
   {
     id: 'comp_ex5',
-    type: 'multiple_choice',
+    type: 'fill_in_blank',
     text: "5. Health is ______ than money.",
     options: ["important", "more important", "the most important"],
     correctAnswer: "more important"
   }
 ];
-
+// --- Ejercicios para Superlativos ---
 export const superlativeExercises = [
   {
+    text: "SUPERLATIVES"
+  },
+  {
     id: 'sup_ex1',
-    type: 'form_superlative',
+    type: 'fill_in_blank',
     text: "1. Escribe la forma superlativa de 'short' (incluye 'the'):",
     placeholder: "Superlativo",
     correctAnswer: "the shortest"
   },
   {
     id: 'sup_ex2',
-    type: 'form_superlative',
+    type: 'fill_in_blank',
     text: "2. Escribe la forma superlativa de 'difficult' (incluye 'the'):",
     placeholder: "Superlativo",
     correctAnswer: "the most difficult"
@@ -110,9 +115,9 @@ export const superlativeExercises = [
   },
   {
     id: 'sup_ex5',
-    type: 'multiple_choice',
+    type: 'fill_in_blank',
     text: "5. It was ______ day of my life.",
-    options: ["the happy", "the happier", "the happiest"],
+    placeholder: "Superlativo",
     correctAnswer: "the happiest"
   }
 ];
@@ -121,14 +126,14 @@ export const superlativeExercises = [
 export const presentPerfectExercises = [
   {
     id: 'pp_ex1',
-    type: 'fill_in_blank_verb',
+    type: 'fill_in_blank',
     text: "1. I ______ (see) that film before.",
     placeholder: "have/has + participio",
     correctAnswer: "have seen"
   },
   {
     id: 'pp_ex2',
-    type: 'fill_in_blank_verb',
+    type: 'fill_in_blank',
     text: "2. She ______ (just / finish) her lunch.",
     placeholder: "have/has + just + participio",
     correctAnswer: "has just finished"
@@ -138,7 +143,6 @@ export const presentPerfectExercises = [
     type: 'form_sentence_negative',
     text: "3. Reescribe en negativo: 'They have visited Paris.'",
     placeholder: "Frase negativa",
-    // Almacenamos la forma completa, ExerciseItem.vue permitirá "haven't"
     correctAnswer: "They have not visited Paris."
   },
   {
@@ -150,10 +154,9 @@ export const presentPerfectExercises = [
   },
   {
     id: 'pp_ex5',
-    type: 'fill_in_blank_verb', // Cambiado para que escriban la negación
+    type: 'form_sentence_negative', 
     text: "5. We ______ (not / be) to Asia yet.",
     placeholder: "have/has + not + participio",
-    // Almacenamos la forma completa, ExerciseItem.vue permitirá "haven't"
     correctAnswer: "have not been"
   }
 ];

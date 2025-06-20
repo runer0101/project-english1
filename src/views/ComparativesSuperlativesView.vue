@@ -1,18 +1,17 @@
-// Archivo: src/views/ComparativesSuperlativesView.vue
 <template>
   <div class="topic-view-container">
     <ContentCard title="Introducción a Comparativos y Superlativos">
           <p>Los adjetivos en inglés son palabras que describen o modifican sustantivos y pronombres, dándonos más información sobre sus cualidades (ej. <em>a <strong>tall</strong> building, a <strong>fast</strong> car, an <strong>interesting</strong> book</em>).</p>
-          <p>Cuando queremos comparar estas cualidades entre dos o más elementos, los adjetivos cambian su forma. Estas formas especiales se conocen como **comparativos** y **superlativos**.</p>
+          <p>Cuando queremos comparar estas cualidades entre dos o más elementos, los adjetivos cambian su forma. Estas formas especiales se conocen como "comparativos" y "superlativos".</p>
     
           <h4>¿Para qué sirven?</h4>
           <ul>
-            <li>Usamos formas **comparativas** para contrastar dos elementos, indicando si uno posee una cualidad en mayor, menor o igual medida que el otro. Responden a preguntas como: "¿Cuál es más alto?" o "¿Es este más caro que aquel?".
+            <li>Usamos formas "comparativas" para contrastar dos elementos, indicando si uno posee una cualidad en mayor, menor o igual medida que el otro. Responden a preguntas como: "¿Cuál es más alto?" o "¿Es este más caro que aquel?".
               <div class="example mini-example">
                 <p><em>My house is <strong>larger than</strong> yours.</em> (Mi casa es más grande que la tuya.)</p>
               </div>
             </li>
-            <li>Usamos formas **superlativas** para destacar un elemento de un grupo (de tres o más), señalando que posee una cualidad en el grado más alto (el más) o más bajo (el menos). Responden a preguntas como: "¿Cuál es el más rápido de todos?" o "¿Quién es la persona más inteligente aquí?".
+            <li>Usamos formas "superlativas" para destacar un elemento de un grupo (de tres o más), señalando que posee una cualidad en el grado más alto (el más) o más bajo (el menos). Responden a preguntas como: "¿Cuál es el más rápido de todos?" o "¿Quién es la persona más inteligente aquí?".
               <div class="example mini-example">
                 <p><em>This is <strong>the tallest</strong> building in the city.</em> (Este es el edificio más alto de la ciudad.)</p>
               </div>
@@ -21,7 +20,7 @@
     
           <h4>Transformación Básica de un Adjetivo:</h4>
           <p>Veamos cómo un adjetivo simple puede cambiar:</p>
-          <div class="table-responsive-wrapper intro-table-wrapper"> {/* Wrapper para responsividad */}
+          <div class="table-responsive-wrapper intro-table-wrapper"> 
             <table class="intro-adj-table">
               <thead>
                 <tr>
@@ -120,7 +119,7 @@
           allowfullscreen>
         </iframe>
       </div>
-      <p>Cuando comparamos dos elementos directamente en una oración, usualmente usamos la palabra **`than`** (que) después del adjetivo comparativo.</p>
+      <p>Cuando comparamos dos elementos directamente en una oración, usualmente usamos la palabra `than` (que) después del adjetivo comparativo.</p>
       <p>Estructura: `Elemento A + verbo + adjetivo comparativo + than + Elemento B`</p>
       <h3>Ejemplos con "Than":</h3>
       <div class="example">
@@ -131,7 +130,7 @@
         <p><em>His new job is <strong>better than</strong> his old one.</em> (Su nuevo trabajo es mejor que el anterior.)</p>
       </div>
       <div class="tip">
-        <p><strong>Nota sobre pronombres después de "than":</strong> En inglés formal, después de "than" se usa un pronombre sujeto seguido de un verbo auxiliar (ej. *She is taller than I <strong>am</strong>.*). En inglés informal, es común usar un pronombre objeto (ej. *She is taller than <strong>me</strong>.*). Ambas formas son aceptadas en diferentes contextos.</p>
+        <p><strong>Nota sobre pronombres después de "than":</strong> En inglés formal, después de "than" se usa un pronombre sujeto seguido de un verbo auxiliar (ej. "She is taller than I <strong>am</strong>."). En inglés informal, es común usar un pronombre objeto (ej. "She is taller than <strong>me</strong>."). Ambas formas son aceptadas en diferentes contextos.</p>
       </div>
       <div class="video-container" v-if="youtubeVideoId && youtubeVideoId !== 'https://youtu.be/WAcZJ-WafgU?si=W4eZANYid5zwQs5c'">
         <iframe

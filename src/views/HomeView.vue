@@ -1,4 +1,3 @@
-// Archivo: src/views/HomeView.vue
 <template>
   <div class="home-view">
     <section class="hero-section">

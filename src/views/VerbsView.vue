@@ -1,4 +1,3 @@
-// Archivo: src/views/VerbsView.vue
 <template>
   <div class="topic-view-container verbs-view">
     <ContentCard title="Verbos en Inglés: Regulares e Irregulares">
@@ -11,7 +10,7 @@
         <span class="card-subtitle">Forman el pasado con "-ed"</span>
       </template>
       <p>La mayoría de los verbos en inglés son regulares. Esto significa que siguen un patrón predecible para formar su tiempo pasado y su participio pasado: simplemente se les añade el sufijo "-ed" (o "-d" si el verbo ya termina en -e).</p>
-      <p>Para los verbos regulares, la forma del **Pasado Simple** y la del **Participio Pasado** son **idénticas**.</p>
+      <p>Para los verbos regulares, la forma del "Pasado Simple" y la del "Participio Pasado" son "idénticas".</p>
       <div class="tip">
         <p><strong>Reglas de Ortografía Comunes al añadir "-ed":</strong></p>
         <ul>

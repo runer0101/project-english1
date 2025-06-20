@@ -1,4 +1,3 @@
-// Archivo: src/views/SimplePastView.vue
 <template>
   <div class="topic-view-container">
     <ContentCard title="¿Qué es el Pasado Simple?">
