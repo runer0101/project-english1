@@ -66,7 +66,7 @@ Asegúrate de tener instalado:
 
 Si tienes alguna pregunta, puedes contactar al mantenedor del proyecto:
 
-* **GitHub**: [runer0101](https://github.com/runer0101)
+* **GitHub**: [runer0101]: https://github.com/runer0101
 * **Email**: ccamachod6@gmail.com
 
 ---
