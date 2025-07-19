@@ -1,9 +1,8 @@
-import { defineConfig } from 'vite'
+// import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'url'
 
-export default defineConfig({
-  base: '/project-english2/', 
+export default ({
   plugins: [vue()],
   resolve: {
     alias: {
