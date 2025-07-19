@@ -76,7 +76,7 @@ export const comparativeExercises = [
     id: 'comp_ex5',
     type: 'fill_in_blank',
     text: "5. Health is ______ than money.",
-    options: ["important", "more important", "the most important"],
+    placeholder: "Comparativo",
     correctAnswer: "more important"
   }
 ];

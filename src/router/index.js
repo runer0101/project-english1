@@ -1,14 +1,4 @@
-// Archivo: src/router/index.js
-
-// Importa las funciones necesarias desde la librería vue-router.
-// createRouter: se usa para crear la instancia del router.
-// createWebHashHistory: se usa para el modo de historial de URLs con hash (#), simple para empezar.
 import { createRouter, createWebHashHistory } from 'vue-router';
-
-// Importación dinámica (lazy loading) de los componentes de vista.
-// Esto significa que el código de cada vista solo se carga cuando el usuario navega a ella,
-// mejorando el tiempo de carga inicial de la aplicación.
-// El alias '@/' usualmente apunta a la carpeta 'src/'.
 const HomeView = () => import('@/views/HomeView.vue'); // Componente para la página de inicio.
 const SimplePastView = () => import('@/views/SimplePastView.vue'); // Componente para la vista del Pasado Simple.
 const ComparativesSuperlativesView = () => import('@/views/ComparativesSuperlativesView.vue'); // Componente para Comparativos y Superlativos.
@@ -42,8 +32,6 @@ const routes = [
     name: 'Verbs',
     component: VerbsView
   },
-  // Puedes añadir una ruta "catch-all" para redirigir páginas no encontradas (opcional).
-  // { path: '/:pathMatch(.*)*', redirect: '/' } // Redirige cualquier ruta no encontrada a la página de inicio.
 ];
 
 // Crea la instancia del router con la configuración.

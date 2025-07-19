@@ -3,7 +3,7 @@
     <section class="hero-section">
       <div class="hero-content container"> 
         <div class="hero-text">
-          <h1 class="app-main-title">Bienvenido a tu Guía Interactiva de Inglés</h1>
+          <h1 class="app-main-title">Bienvenido a tu Guía Interactiva de Inglés Básico</h1>
           <p class="subtitle-enhanced">
             Domina la gramática inglesa con explicaciones claras, ejemplos prácticos y ejercicios interactivos diseñados para ti.
           </p>
